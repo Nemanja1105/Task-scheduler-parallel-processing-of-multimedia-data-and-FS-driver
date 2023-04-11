@@ -22,8 +22,11 @@ The graphical user interface of the application allows viewing of tasks in progr
 Serialization and deserialization of tasks are enabled, including an array of input file paths and the path where output files should be generated. The internal state of the application can also be serialized (number of tasks and processing state). In the event of application termination, tasks can be resumed from the point where they were previously stopped.
 
 The file system driver is implemented in user space. The file system uses the scheduler API and enables processing of multimedia files. The file system is implemented in Dokan.net. 
+
 ![image](https://user-images.githubusercontent.com/93669392/231273338-eb0044e3-e902-43f2-9909-3b363ff153d6.png)
+
 ![image](https://user-images.githubusercontent.com/93669392/231273435-261cf5a5-ff52-4c0e-8c15-8b1979b332a3.png)
+
 ![image](https://user-images.githubusercontent.com/93669392/231273894-6cdf95c1-3145-4d19-b1da-36a6622d61b0.png)
 
 
