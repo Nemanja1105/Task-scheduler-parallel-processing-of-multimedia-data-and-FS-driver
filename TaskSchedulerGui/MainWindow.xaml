@@ -1,0 +1,53 @@
+﻿<Window x:Class="TaskSchedulerGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskSchedulerGui"
+        mc:Ignorable="d"
+        Title="Task Scheduler" WindowStartupLocation="CenterOwner" Topmost="True" Height="406" Width="654" ResizeMode="NoResize">
+    <Grid HorizontalAlignment="Center" Width="676">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="675*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="6,0,-10,338" Grid.ColumnSpan="2" Grid.Column="1">
+            <Label Content="Task Scheduler Gui App&#xA;" FontSize="18" Height="41" FontFamily="Segoe UI Symbol" HorizontalAlignment="Center" Background="White" Foreground="#FF761FF9" FontWeight="Bold" Width="214"/>
+
+        </StackPanel>
+
+        <Label Content="Maximum number of concurrent tasks" HorizontalAlignment="Left" Margin="39,83,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Segoe UI Symbol" Height="29" Width="245" Grid.Column="1"/>
+        <TextBox x:Name="MaxNumTask" HorizontalAlignment="Left" Margin="355,88,0,0" TextWrapping="Wrap" Text="Enter" VerticalAlignment="Top" Width="152" Height="24" FontFamily="Segoe UI Symbol" FontSize="14" GotFocus="MaxNumTask_GotFocus" LostFocus="MaxNumTask_LostFocus" RenderTransformOrigin="0.5,0.5" Grid.Column="1" TextChanged="MaxNumTask_TextChanged"
+                 >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.353"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+
+        </TextBox>
+        <Label Content="Scheduling algorithm" HorizontalAlignment="Left" Margin="39,136,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Segoe UI Symbol" Height="29" Width="142" Grid.Column="1"/>
+        <ComboBox Name="SchedulingCombo" HorizontalAlignment="Left" Margin="355,140,0,0" VerticalAlignment="Top" Width="152" FontSize="16" FontFamily="Segoe UI Symbol" ItemsSource="{Binding Algorithms}" DisplayMemberPath="Name" SelectionChanged="SchedulingCombo_SelectionChanged" Height="27" Grid.Column="1"/>
+        <StackPanel Name="RoundRobinPanel" Visibility="Hidden" Margin="39,184,0,145" Orientation="Horizontal" Grid.Column="1">
+            <Label Content="Time slice"  FontSize="14" FontFamily="Segoe UI Symbol" VerticalAlignment="Center" Width="139"/>
+            <TextBox x:Name="TimeSliceTextBox"  TextWrapping="Wrap" Text="Enter" Width="152" Height="21" FontFamily="Segoe UI Symbol" FontSize="14" GotFocus="MaxNumTask_GotFocus" LostFocus="MaxNumTask_LostFocus" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center"
+                 >
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.353"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+        </StackPanel>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="259,263,0,0" VerticalAlignment="Top" Height="53" Width="124" FontFamily="Segoe UI Symbol" FontSize="16" Click="Button_Click" Foreground="#FF1E0DEF" Background="#FFC8D5FF" BorderBrush="White" Grid.Column="1" RenderTransformOrigin="0.478,0.967"/>
+
+    </Grid>
+</Window>
